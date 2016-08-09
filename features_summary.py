@@ -8,6 +8,7 @@ from pandas import Series,DataFrame
 import pandas as pd
 
 def feature_summary(data):
+    n_row=data.shape[0]
     features=pd.DataFrame()
     features_names=[]
     features_counts=[]
@@ -20,5 +21,6 @@ def feature_summary(data):
     features['name']=features_names
     features['value counts']=features_counts
     features['missing']=features_missing
+    features['percentage_missing']=features['missing']/n_row
     return (features)
         
